@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="theme.css">
+    </head>
+    <body ng-app="myApp" ng-controller="todoCtrl">
+        <div class="col-lg-12">
+            <h1>My Todo List</h1>
+        </div>
+        <div class="col-lg-10 col-lg-offset-1">
+            
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+                <tr data-ng-repeat="d in todoList">
+                    <td>
+                        <input type="text" class="form-control" id="name{{$index}}" placeholder="name" data-ng-model="d.name">
+                    </td>                    
+                    <td>
+                        <button type="button" class="btn btn-primary" data-ng-click="updateItem(d)">Update</button>
+                        <button type="button" class="btn btn-primary" data-ng-click="removeItem(d)">Remove</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" id="add-name{{$index}}" placeholder="add item" data-ng-model="name">
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-ng-click="addItem(name)">Add Item</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.14/angular.min.js"></script>
+    <script src="script.js"></script>
+    
+</html>
